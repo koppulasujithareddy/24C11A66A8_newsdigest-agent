@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>NewsDigest Agent</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f8;
+margin:40px;
+}
+
+h1{
+text-align:center;
+}
+
+form{
+text-align:center;
+margin-bottom:30px;
+}
+
+input{
+padding:10px;
+width:300px;
+font-size:16px;
+}
+
+button{
+padding:10px 20px;
+background:#007BFF;
+color:white;
+border:none;
+}
+
+.topic{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+.article{
+margin-bottom:20px;
+}
+
+.sentiment-bar{
+width:200px;
+height:20px;
+background:#ddd;
+border-radius:10px;
+margin-top:5px;
+}
+
+.sentiment{
+height:100%;
+color:white;
+text-align:center;
+font-size:12px;
+border-radius:10px;
+}
+
+.Positive{
+background:green;
+width:100%;
+}
+
+.Neutral{
+background:orange;
+width:100%;
+}
+
+.Negative{
+background:red;
+width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>NewsDigest Agent</h1>
+
+<form method="POST">
+
+<input type="text" name="topics" placeholder="AI, Cricket, Economy">
+
+<button type="submit">Get News</button>
+
+</form>
+
+{% for topic, articles in results.items() %}
+
+<div class="topic">
+
+<h2>{{topic}}</h2>
+
+{% for a in articles %}
+
+<div class="article">
+
+<b>{{a.title}}</b>
+
+<p>{{a.summary}}</p>
+
+<div class="sentiment-bar">
+
+<div class="sentiment {{a.sentiment}}">
+
+{{a.sentiment}}
+
+</div>
+
+</div>
+
+</div>
+
+<hr>
+
+{% endfor %}
+
+</div>
+
+{% endfor %}
+
+</body>
+</html>
