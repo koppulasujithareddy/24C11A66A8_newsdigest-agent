@@ -1,6 +1,6 @@
 # NewsDigest Agent
 
-Topic-Aware News Summarizer with Sentiment Analysis.
+Topic-Aware News Summarizer with Sentiment Analysis. 
 
 ## Problem 
 Reading full news articles takes time.
