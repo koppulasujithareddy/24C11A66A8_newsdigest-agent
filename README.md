@@ -2,7 +2,7 @@
 
 Topic-Aware News Summarizer with Sentiment Analysis. 
 
-## Problem 
+## Problem
 Reading full news articles takes time.
 
 ## Solution
